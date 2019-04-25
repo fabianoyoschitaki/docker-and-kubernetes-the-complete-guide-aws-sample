@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t fabianoyoschitaki/docker-and-kubernetes-the-complete-guide-aws-sample -f Dockerfile.dev .
+
+script:
+  - docker run fabiaanoyoschitaki/docker-and-kubernetes-the-complete-guide-aws-sample npm run test -- --coverage
